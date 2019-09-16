@@ -2,45 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:myapp/Components/CourseCard.dart';
 import 'package:myapp/Pages/Category.dart';
+import 'package:myapp/Pages/Search.dart';
 
 class PageHome extends StatelessWidget {
-
-  final bottomBar = Container(
-      color: Colors.white,
-      height: 50.0,
-      alignment: Alignment.center,
-      child: BottomAppBar(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            IconButton(
-              icon: Icon(Icons.home),
-              onPressed: () {print('点击了首页');},
-            ),
-            IconButton(
-              icon: Icon(Icons.book),
-              onPressed: () {print('点击了首页');},
-            ),
-            IconButton(
-              icon: Icon(Icons.business_center),
-              onPressed: () {print('点击了首页');},
-            ),
-            IconButton(
-              icon: Icon(Icons.person_pin_circle),
-              onPressed: () {print('点击了首页');},
-            ),
-          ],
-        ),
-      ),
-    );
-
-  final carousel = Expanded(
-    child: Container(
-      height: 180,
-      color: Color(0xff0088cc),
-      child: Text('Carousel'),
-    ),
-  );
 
   static final planBlock = Container(
     padding: EdgeInsets.all(10),
@@ -51,54 +15,47 @@ class PageHome extends StatelessWidget {
       children: <Widget>[
         Column(
           children: <Widget>[
-            Icon(Icons.security),
-            Text('中级会计')
+            Container(
+              height: 50,
+              width: 50,
+              child: Image.asset('assets/Icon_ZhongJi.png'),
+            ),
+            Text('中级会计', style: TextStyle(height: 1.5),)
           ],
         ),
         Column(
           children: <Widget>[
-            Icon(Icons.security),
-            Text('初级会计')
+            Container(
+              height: 50,
+              width: 50,
+              child: Image.asset('assets/Icon_ChuJi.png'),
+            ),
+            Text('初级会计', style: TextStyle(height: 1.5),)
           ],
         ),
         Column(
           children: <Widget>[
-            Icon(Icons.security),
-            Text('CMA')
+            Container(
+              height: 50,
+              width: 50,
+              child: Image.asset('assets/Icon_CMA.png'),
+            ),
+            Text('CMA', style: TextStyle(height: 1.5),)
           ],
         ),
         Column(
           children: <Widget>[
-            Icon(Icons.security),
-            Text('校企专区')
+            Container(
+              height: 50,
+              width: 50,
+              child: Image.asset('assets/Icon_Enterprise.png'),
+            ),
+            Text('校企专区', style: TextStyle(height: 1.5),)
           ],
         )
       ],
     ),
   );
-
-  // Widget _planCourse () {
-  //   return  Container(
-  //     color: Color(0xffffffff),
-  //     padding: EdgeInsets.all(10),
-  //     child: Column(
-  //       children: <Widget>[
-  //         Row(
-  //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  //           children: <Widget>[Text('会计职称考辅'), Text('更多 >')],
-  //         ),
-  //         Wrap(
-  //           children: <Widget>[
-  //             Container(
-  //               width: MediaQuery.of(context).size.width *0.5,
-  //               child: CourseCard(),
-  //             )
-  //           ],
-  //         )
-  //       ],
-  //     ),
-  //   )
-  // };
 
   Widget _coursePlan(BuildContext context){
     return  Container(
@@ -146,7 +103,7 @@ class PageHome extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         centerTitle: false,
-        elevation: 1.0,
+        elevation: 2,
         title: Row(
           children: <Widget>[
             IconButton(
@@ -155,22 +112,26 @@ class PageHome extends StatelessWidget {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => PageCategory()));
               },
             ),
+
             Expanded(
-              child: Container(
-                margin: EdgeInsets.only(top: 10, bottom: 10),
-                padding: EdgeInsets.only(left: 15, right: 15),
-                width: 200,
-                alignment: Alignment(0, 0),
-                decoration: BoxDecoration(
-                  color: Color(0xfff2f2f2),
-                  borderRadius: BorderRadius.all(Radius.circular(25)),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text('搜索您想要的课程', style: TextStyle(color: Color(0xffaaaaaa), fontSize: 13)),
-                    Container(child: Icon(Icons.search, color: Color(0xffaaaaaa))),
-                  ],
+              child: GestureDetector(
+                onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => PageSearch()));},
+                child: Container(
+                  margin: EdgeInsets.only(top: 10, bottom: 10),
+                  padding: EdgeInsets.only(left: 15, right: 15),
+                  width: 200,
+                  alignment: Alignment(0, 0),
+                  decoration: BoxDecoration(
+                    color: Color(0xfff2f2f2),
+                    borderRadius: BorderRadius.all(Radius.circular(25)),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text('搜索您想要的课程', style: TextStyle(color: Color(0xffaaaaaa), fontSize: 13)),
+                      Container(child: Icon(Icons.search, color: Color(0xffaaaaaa))),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -193,7 +154,7 @@ class PageHome extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: bottomBar
+      // bottomNavigationBar: bottomBar
     );
   }
 }
