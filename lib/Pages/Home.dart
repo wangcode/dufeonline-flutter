@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
+
+// import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
+
 import 'package:myapp/Components/CourseCard.dart';
 import 'package:myapp/Pages/Category.dart';
 import 'package:myapp/Pages/Search.dart';
@@ -97,6 +100,13 @@ class PageHome extends StatelessWidget {
       ),
     );
   }
+
+  final _carouselList = [
+    Image.network("http://cache8.edufe.cn/b2c/static/upload/photos_carousel/da4cd42cf5a64a29a5ff7bcea6855f09.jpg", fit: BoxFit.fill,),
+    Image.network("http://cache9.edufe.cn/b2c/static/upload/photos_carousel/8bb5a68e445b4d869788d2845f1506d2.jpg", fit: BoxFit.fill,),
+    Image.network("http://cache5.edufe.cn/b2c/static/upload/photos_carousel/183d2d513e2a4136ae6d614e06b15ca2.jpg", fit: BoxFit.fill,),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -138,22 +148,38 @@ class PageHome extends StatelessWidget {
           ],
         )
       ),
-      body: ListView(
-        children: <Widget>[
-          Container(
-            color: Color(0xfff0f1f3),
-            child: Column(
-              children: <Widget>[
-                planBlock,
-                _coursePlan(context),
-                _coursePlan(context),
-                _coursePlan(context),
-                _coursePlan(context),
-              ],
+      body: RefreshIndicator(
+        onRefresh: () {
+          print('123');
+          return ;
+        },
+        child: ListView(
+          children: <Widget>[
+            Container(
+              height: 180,
+              child: Swiper(
+                itemBuilder: (BuildContext context,int index){
+                  return _carouselList[index];
+                },
+                itemCount: _carouselList.length,
+                pagination: SwiperPagination(),
+              ),
             ),
-          ),
-        ],
-      ),
+            Container(
+                color: Color(0xfff0f1f3),
+                child: Column(
+                children: <Widget>[
+                  planBlock,
+                  _coursePlan(context),
+                  _coursePlan(context),
+                  _coursePlan(context),
+                  _coursePlan(context),
+                ],
+                ),
+            ),
+          ],
+        ),
+        ),
       // bottomNavigationBar: bottomBar
     );
   }

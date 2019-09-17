@@ -26,6 +26,7 @@ dependencies:
   intl: ^0.15.7
   provider: ^2.0.0+1
   shrine_images: ^1.0.0
+  flutter_swiper : ^1.1.6
 
 dev_dependencies:
   pedantic: ^1.4.0
