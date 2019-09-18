@@ -35,7 +35,7 @@ class _PageMainState extends State<PageMain> {
         unselectedItemColor: Colors.grey,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Image.asset('assets/icon/homeActive.png', height: 25, width: 25,),
             title: Text('首页'),
           ),
           BottomNavigationBarItem(
@@ -43,11 +43,11 @@ class _PageMainState extends State<PageMain> {
             title: Text('选课'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Image.asset('assets/icon/bookActive.png', height: 25, width: 25,),
             title: Text('听课'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Image.asset('assets/icon/userActive.png', height: 25, width: 25,),
             title: Text('我的'),
           )
         ],
