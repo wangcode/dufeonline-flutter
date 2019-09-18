@@ -19,6 +19,14 @@ class _PageMainState extends State<PageMain> {
     PageAccount(),
   ];
 
+  Text _getLabel (String title, { int index, int currentIndex }) {
+    return Text(title,style: TextStyle(color: currentIndex==index?Color(0xff2D99ED):Color(0xff444444)));
+  }
+
+  Icon _getIcon ({int icon, int activeIcon, int index, int currentIndex}) {
+    return Icon(IconData(currentIndex==index?activeIcon:icon, fontFamily: 'DufeIcon'));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,24 +39,23 @@ class _PageMainState extends State<PageMain> {
         type: BottomNavigationBarType.fixed,
         selectedFontSize: 14,
         unselectedFontSize: 14,
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.grey,
+        selectedItemColor: Colors.black,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('首页'),
+            icon: _getIcon(icon: 0xe607, activeIcon: 0xe603, index: 0, currentIndex: _tabIndex),
+            title: _getLabel('首页', index: 0, currentIndex: _tabIndex)
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('选课'),
+            icon: _getIcon(icon: 0xe60a, activeIcon: 0xe606, index: 1, currentIndex: _tabIndex),
+            title: _getLabel('选课', index: 1, currentIndex: _tabIndex)
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('听课'),
+            icon: _getIcon(icon: 0xe601, activeIcon: 0xe608, index: 2, currentIndex: _tabIndex),
+            title: _getLabel('听课', index: 2, currentIndex: _tabIndex)
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('我的'),
+            icon: _getIcon(icon: 0xe602, activeIcon: 0xe604, index: 3, currentIndex: _tabIndex),
+            title: _getLabel('我的', index: 3, currentIndex: _tabIndex)
           )
         ],
       ),
