@@ -11,7 +11,6 @@ class PageMain extends StatefulWidget {
 class _PageMainState extends State<PageMain> {
 
   var _tabIndex = 0;
-
   var _pageList = [
     PageHome(),
     PageCourses(),
@@ -19,16 +18,16 @@ class _PageMainState extends State<PageMain> {
     PageAccount(),
   ];
 
-  Text _getLabel (String title, { int index, int currentIndex }) {
-    return Text(title,style: TextStyle(color: currentIndex==index?Color(0xff2D99ED):Color(0xff444444)));
-  }
-
-  Icon _getIcon ({int icon, int activeIcon, int index, int currentIndex}) {
-    return Icon(IconData(currentIndex==index?activeIcon:icon, fontFamily: 'DufeIcon'));
+  BottomNavigationBarItem _getBottomNavigationBarItem(String title, {String icon, String activeIcon, int, index, int currentIndex}) {
+    return BottomNavigationBarItem(
+      icon: Image.asset(currentIndex==index?activeIcon:icon, width: 25, height: 25),
+      title: Text(title, style: TextStyle(color: currentIndex==index?Color(0xff2D99ED):Color(0xff444444)))
+    );
   }
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: _pageList[_tabIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -37,26 +36,37 @@ class _PageMainState extends State<PageMain> {
         });},
         currentIndex: _tabIndex,
         type: BottomNavigationBarType.fixed,
-        selectedFontSize: 14,
-        unselectedFontSize: 14,
-        selectedItemColor: Colors.black,
+        selectedFontSize: 13,
+        unselectedFontSize: 13,
         items: [
-          BottomNavigationBarItem(
-            icon: _getIcon(icon: 0xe607, activeIcon: 0xe603, index: 0, currentIndex: _tabIndex),
-            title: _getLabel('首页', index: 0, currentIndex: _tabIndex)
+          _getBottomNavigationBarItem(
+            '首页',
+            icon: 'assets/icon/home.png',
+            activeIcon: 'assets/icon/homeActive.png',
+            index: 0,
+            currentIndex: _tabIndex
           ),
-          BottomNavigationBarItem(
-            icon: _getIcon(icon: 0xe60a, activeIcon: 0xe606, index: 1, currentIndex: _tabIndex),
-            title: _getLabel('选课', index: 1, currentIndex: _tabIndex)
+          _getBottomNavigationBarItem(
+            '选课',
+            icon: 'assets/icon/light.png',
+            activeIcon: 'assets/icon/lightActive.png',
+            index: 1,
+            currentIndex: _tabIndex
           ),
-          BottomNavigationBarItem(
-            icon: _getIcon(icon: 0xe601, activeIcon: 0xe608, index: 2, currentIndex: _tabIndex),
-            title: _getLabel('听课', index: 2, currentIndex: _tabIndex)
+          _getBottomNavigationBarItem(
+            '听课',
+            icon: 'assets/icon/book.png',
+            activeIcon: 'assets/icon/bookActive.png',
+            index: 2,
+            currentIndex: _tabIndex
           ),
-          BottomNavigationBarItem(
-            icon: _getIcon(icon: 0xe602, activeIcon: 0xe604, index: 3, currentIndex: _tabIndex),
-            title: _getLabel('我的', index: 3, currentIndex: _tabIndex)
-          )
+          _getBottomNavigationBarItem(
+            '我的',
+            icon: 'assets/icon/user.png',
+            activeIcon: 'assets/icon/userActive.png',
+            index: 3,
+            currentIndex: _tabIndex
+          ),
         ],
       ),
     );

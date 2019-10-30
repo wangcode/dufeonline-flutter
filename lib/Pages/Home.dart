@@ -19,9 +19,8 @@ class PageHome extends StatelessWidget {
         Column(
           children: <Widget>[
             Container(
-              height: 50,
-              width: 50,
-              child: Image.asset('assets/Icon_ZhongJi.png'),
+              padding: EdgeInsets.all(5),
+              child: Image.asset('assets/Icon_ZhongJi.png', width: 40, height: 40),
             ),
             Text('中级会计', style: TextStyle(height: 1.5),)
           ],
@@ -29,9 +28,8 @@ class PageHome extends StatelessWidget {
         Column(
           children: <Widget>[
             Container(
-              height: 50,
-              width: 50,
-              child: Image.asset('assets/Icon_ChuJi.png'),
+              padding: EdgeInsets.all(5),
+              child: Image.asset('assets/Icon_ChuJi.png', width: 40, height: 40),
             ),
             Text('初级会计', style: TextStyle(height: 1.5),)
           ],
@@ -39,9 +37,8 @@ class PageHome extends StatelessWidget {
         Column(
           children: <Widget>[
             Container(
-              height: 50,
-              width: 50,
-              child: Image.asset('assets/Icon_CMA.png'),
+              padding: EdgeInsets.all(5),
+              child: Image.asset('assets/Icon_CMA.png', width: 40, height: 40),
             ),
             Text('CMA', style: TextStyle(height: 1.5),)
           ],
@@ -49,9 +46,8 @@ class PageHome extends StatelessWidget {
         Column(
           children: <Widget>[
             Container(
-              height: 50,
-              width: 50,
-              child: Image.asset('assets/Icon_Enterprise.png'),
+              padding: EdgeInsets.all(5),
+              child: Image.asset('assets/Icon_Enterprise.png', width: 40, height: 40),
             ),
             Text('校企专区', style: TextStyle(height: 1.5),)
           ],
@@ -102,9 +98,9 @@ class PageHome extends StatelessWidget {
   }
 
   final _carouselList = [
-    Image.network("http://cache8.edufe.cn/b2c/static/upload/photos_carousel/da4cd42cf5a64a29a5ff7bcea6855f09.jpg", fit: BoxFit.fill,),
-    Image.network("http://cache9.edufe.cn/b2c/static/upload/photos_carousel/8bb5a68e445b4d869788d2845f1506d2.jpg", fit: BoxFit.fill,),
-    Image.network("http://cache5.edufe.cn/b2c/static/upload/photos_carousel/183d2d513e2a4136ae6d614e06b15ca2.jpg", fit: BoxFit.fill,),
+    Image(image: NetworkImage('http://cache8.edufe.cn/b2c/static/upload/photos_carousel/da4cd42cf5a64a29a5ff7bcea6855f09.jpg'), fit: BoxFit.fill,),
+    Image(image: NetworkImage('http://cache8.edufe.cn/b2c/static/upload/photos_carousel/8bb5a68e445b4d869788d2845f1506d2.jpg'), fit: BoxFit.fill,),
+    Image(image: NetworkImage('http://cache8.edufe.cn/b2c/static/upload/photos_carousel/183d2d513e2a4136ae6d614e06b15ca2.jpg'), fit: BoxFit.fill,),
   ];
 
   @override

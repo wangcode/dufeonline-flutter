@@ -57,6 +57,8 @@ flutter:
     - assets/icon/bookActive.png
     - assets/icon/user.png
     - assets/icon/userActive.png
+    - assets/icon/light.png
+    - assets/icon/lightActive.png
 
   fonts:
   - family: DufeIcon

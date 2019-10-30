@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/Components/DufeIcon.dart';
 import 'package:myapp/Pages/Account/Setting.dart';
 
 class PageAccount extends StatelessWidget {
@@ -60,55 +61,55 @@ class PageAccount extends StatelessWidget {
                 children: <Widget>[
                   _listItemBuilder(
                     '我的专区',
-                    icon: Icons.airline_seat_recline_normal,
+                    icon: dufeIcon(0xe60e),
                     onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSetting()));}
                   ),
                   Divider(),
                   _listItemBuilder(
                     '我的收藏',
-                    icon: Icons.favorite_border,
+                    icon: dufeIcon(0xe611),
                     onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSetting()));}
                   ),
                   _listItemBuilder(
                     '我的订单',
-                    icon: Icons.local_offer,
+                    icon: dufeIcon(0xe60e),
                     onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSetting()));}
                   ),
                   _listItemBuilder(
                     '我的优惠券',
-                    icon: Icons.card_giftcard,
+                    icon: dufeIcon(0xe619),
                     onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSetting()));}
                   ),
                   Divider(),
                   _listItemBuilder(
                     '我的消息',
-                    icon: Icons.notifications_none,
+                    icon: dufeIcon(0xe60c),
                     onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSetting()));}
                   ),
                   _listItemBuilder(
                     '我的任务',
-                    icon: Icons.list,
+                    icon: dufeIcon(0xe617),
                     onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSetting()));}
                   ),
                   _listItemBuilder(
                     '我的积分',
-                    icon: Icons.credit_card,
+                    icon: dufeIcon(0xe618),
                     onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSetting()));}
                   ),
                   Divider(),
                   _listItemBuilder(
                     '设置',
-                    icon: Icons.settings,
+                    icon: dufeIcon(0xe615),
                     onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSetting()));}
                   ),
                   _listItemBuilder(
                     '帮助中心',
-                    icon: Icons.help_outline,
+                    icon: dufeIcon(0xe61a),
                     onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSetting()));}
                   ),
                   _listItemBuilder(
                     '关于我们',
-                    icon: Icons.account_circle,
+                    icon: dufeIcon(0xe616),
                     onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSetting()));}
                   ),
                 ],
