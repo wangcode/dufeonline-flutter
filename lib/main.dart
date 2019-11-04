@@ -11,6 +11,8 @@ class MyApp extends StatelessWidget {
       title: '东财在线',
       home: PageMain(),
       theme: ThemeData(
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
         primaryColor: Colors.white,
         appBarTheme: AppBarTheme(
           elevation: 2,
