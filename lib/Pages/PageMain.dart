@@ -32,7 +32,7 @@ class _PageMainState extends State<PageMain> {
       body: _pageList[_tabIndex],
       bottomNavigationBar: BottomNavigationBar(
         onTap: (index) {setState(() {
-         _tabIndex=index+1;
+         _tabIndex=index;
         });},
         currentIndex: _tabIndex,
         type: BottomNavigationBarType.fixed,
@@ -43,28 +43,28 @@ class _PageMainState extends State<PageMain> {
             '首页',
             icon: 'assets/icon/home.png',
             activeIcon: 'assets/icon/homeActive.png',
-            index: 1,
+            index: 0,
             currentIndex: _tabIndex
           ),
           _getBottomNavigationBarItem(
             '选课',
             icon: 'assets/icon/light.png',
             activeIcon: 'assets/icon/lightActive.png',
-            index: 2,
+            index: 1,
             currentIndex: _tabIndex
           ),
           _getBottomNavigationBarItem(
             '听课',
             icon: 'assets/icon/book.png',
             activeIcon: 'assets/icon/bookActive.png',
-            index: 3,
+            index: 2,
             currentIndex: _tabIndex
           ),
           _getBottomNavigationBarItem(
             '我的',
             icon: 'assets/icon/user.png',
             activeIcon: 'assets/icon/userActive.png',
-            index: 4,
+            index: 3,
             currentIndex: _tabIndex
           ),
         ],

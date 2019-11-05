@@ -3,9 +3,13 @@ import 'package:flutter/material.dart';
 // import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
-import 'package:myapp/Components/CourseCard.dart';
+// import 'package:myapp/Components/CourseCard.dart';
 import 'package:myapp/Pages/Category.dart';
 import 'package:myapp/Pages/Search.dart';
+
+import 'package:myapp/Pages/Home/widget/HomeAppBar.dart';
+
+import 'package:myapp/Widgets/CourseCard.dart';
 
 class PageHome extends StatelessWidget {
 
@@ -76,19 +80,39 @@ class PageHome extends StatelessWidget {
             children: <Widget>[
               Container(
                 width: MediaQuery.of(context).size.width*0.5-15,
-                child: CourseCard(),
+                child: CourseCard(
+                  courseName: 'Text',
+                  picUrl: 'http://cache2.edufe.cn/b2c/static/upload/photos_pack/d07cc527e73f445096c12d52f71fc394.jpeg',
+                  timeLength: 12,
+                  price: 9.9,
+                ),
               ),
               Container(
                 width: MediaQuery.of(context).size.width*0.5-15,
-                child: CourseCard(),
+                child: CourseCard(
+                  courseName: 'Text',
+                  picUrl: 'http://cache2.edufe.cn/b2c/static/upload/photos_pack/d07cc527e73f445096c12d52f71fc394.jpeg',
+                  timeLength: 12,
+                  price: 9.9,
+                ),
               ),
               Container(
                 width: MediaQuery.of(context).size.width*0.5-15,
-                child: CourseCard(),
+                child: CourseCard(
+                  courseName: 'Text',
+                  picUrl: 'http://cache2.edufe.cn/b2c/static/upload/photos_pack/d07cc527e73f445096c12d52f71fc394.jpeg',
+                  timeLength: 12,
+                  price: 9.9,
+                ),
               ),
               Container(
                 width: MediaQuery.of(context).size.width*0.5-15,
-                child: CourseCard(),
+                child: CourseCard(
+                  courseName: 'Text',
+                  picUrl: 'http://cache2.edufe.cn/b2c/static/upload/photos_pack/d07cc527e73f445096c12d52f71fc394.jpeg',
+                  timeLength: 12,
+                  price: 9.9,
+                ),
               ),
             ],
           )
@@ -106,44 +130,7 @@ class PageHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        centerTitle: false,
-        elevation: 2,
-        title: Row(
-          children: <Widget>[
-            IconButton(
-              icon: Icon(Icons.menu),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => PageCategory()));
-              },
-            ),
-
-            Expanded(
-              child: GestureDetector(
-                onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => PageSearch()));},
-                child: Container(
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  padding: EdgeInsets.only(left: 15, right: 15),
-                  width: 200,
-                  alignment: Alignment(0, 0),
-                  decoration: BoxDecoration(
-                    color: Color(0xfff2f2f2),
-                    borderRadius: BorderRadius.all(Radius.circular(25)),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text('搜索您想要的课程', style: TextStyle(color: Color(0xffaaaaaa), fontSize: 13)),
-                      Container(child: Icon(Icons.search, color: Color(0xffaaaaaa))),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ],
-        )
-      ),
+      appBar: HomeAppBar(),
       body: RefreshIndicator(
         onRefresh: () {
           print('123');
