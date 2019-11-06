@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/Pages/Account.dart';
-import 'package:myapp/Pages/Courses.dart';
-import 'package:myapp/Pages/Home.dart';
+
+import 'package:myapp/Pages/Home/PageHome.dart';
+import 'package:myapp/Pages/Course/Course.dart';
+import 'package:myapp/Pages/Study/Study.dart';
+import 'package:myapp/Pages/Account/Account.dart';
 
 class PageMain extends StatefulWidget {
   @override
@@ -13,8 +15,8 @@ class _PageMainState extends State<PageMain> {
   var _tabIndex = 0;
   var _pageList = [
     PageHome(),
-    PageCourses(),
-    PageAccount(),
+    PageCourse(),
+    PageStudy(),
     PageAccount(),
   ];
 

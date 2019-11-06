@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/Components/DufeIcon.dart';
-import 'package:myapp/Pages/Account/Setting.dart';
+import 'package:myapp/Pages/Search.dart';
 
 class PageAccount extends StatelessWidget {
 
@@ -62,55 +62,55 @@ class PageAccount extends StatelessWidget {
                   _listItemBuilder(
                     '我的专区',
                     icon: dufeIcon(0xe60e),
-                    onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSetting()));}
+                    onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSearch()));}
                   ),
                   Divider(),
                   _listItemBuilder(
                     '我的收藏',
                     icon: dufeIcon(0xe611),
-                    onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSetting()));}
+                    onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSearch()));}
                   ),
                   _listItemBuilder(
                     '我的订单',
                     icon: dufeIcon(0xe60e),
-                    onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSetting()));}
+                    onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSearch()));}
                   ),
                   _listItemBuilder(
                     '我的优惠券',
                     icon: dufeIcon(0xe619),
-                    onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSetting()));}
+                    onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSearch()));}
                   ),
                   Divider(),
                   _listItemBuilder(
                     '我的消息',
                     icon: dufeIcon(0xe60c),
-                    onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSetting()));}
+                    onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSearch()));}
                   ),
                   _listItemBuilder(
                     '我的任务',
                     icon: dufeIcon(0xe617),
-                    onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSetting()));}
+                    onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSearch()));}
                   ),
                   _listItemBuilder(
                     '我的积分',
                     icon: dufeIcon(0xe618),
-                    onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSetting()));}
+                    onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSearch()));}
                   ),
                   Divider(),
                   _listItemBuilder(
                     '设置',
                     icon: dufeIcon(0xe615),
-                    onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSetting()));}
+                    onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSearch()));}
                   ),
                   _listItemBuilder(
                     '帮助中心',
                     icon: dufeIcon(0xe61a),
-                    onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSetting()));}
+                    onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSearch()));}
                   ),
                   _listItemBuilder(
                     '关于我们',
                     icon: dufeIcon(0xe616),
-                    onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSetting()));}
+                    onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSearch()));}
                   ),
                 ],
               ),
