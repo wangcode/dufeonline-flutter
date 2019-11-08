@@ -10,8 +10,14 @@ class Carousel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    for (var image in list) {
+      precacheImage(image, context);
+    }
+
     return Swiper(
-      itemBuilder: (BuildContext context,int index){return list[index];},
+      itemBuilder: (BuildContext context, int index){
+        return Image(image: list[index], fit: BoxFit.fill, gaplessPlayback: true);
+      },
       itemCount: list.length,
       pagination: SwiperPagination(),
     );

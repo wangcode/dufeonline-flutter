@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// import 'package:myapp/Pages/Account.dart';
 import 'package:myapp/Pages/PageMain.dart';
 
 void main() => runApp(MyApp());
@@ -14,6 +13,7 @@ class MyApp extends StatelessWidget {
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
         primaryColor: Colors.white,
+        scaffoldBackgroundColor: Color(0xffeeeff0),
         appBarTheme: AppBarTheme(
           elevation: 2,
           textTheme: TextTheme(

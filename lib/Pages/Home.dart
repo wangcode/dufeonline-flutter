@@ -3,10 +3,6 @@ import 'package:flutter/material.dart';
 // import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
-// import 'package:myapp/Components/CourseCard.dart';
-import 'package:myapp/Pages/Category.dart';
-import 'package:myapp/Pages/Search.dart';
-
 import 'package:myapp/Pages/Home/widget/HomeAppBar.dart';
 
 import 'package:myapp/Widgets/CourseCard.dart';

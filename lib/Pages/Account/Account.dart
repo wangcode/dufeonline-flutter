@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/Components/DufeIcon.dart';
+import 'package:myapp/Pages/Account/AccountCourse.dart';
 import 'package:myapp/Pages/Search.dart';
 
 class PageAccount extends StatelessWidget {
@@ -62,7 +63,7 @@ class PageAccount extends StatelessWidget {
                   _listItemBuilder(
                     '我的专区',
                     icon: dufeIcon(0xe60e),
-                    onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSearch()));}
+                    onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>AccountCourse()));}
                   ),
                   Divider(),
                   _listItemBuilder(

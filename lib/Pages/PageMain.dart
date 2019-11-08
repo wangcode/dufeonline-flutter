@@ -20,7 +20,9 @@ class _PageMainState extends State<PageMain> {
     PageAccount(),
   ];
 
-  BottomNavigationBarItem _getBottomNavigationBarItem(String title, {String icon, String activeIcon, int, index, int currentIndex}) {
+  BottomNavigationBarItem _getBottomNavigationBarItem(BuildContext context, String title, {String icon, String activeIcon, int, index, int currentIndex}) {
+    precacheImage(AssetImage(activeIcon), context);
+
     return BottomNavigationBarItem(
       icon: Image.asset(currentIndex==index?activeIcon:icon, width: 25, height: 25),
       title: Text(title, style: TextStyle(color: currentIndex==index?Color(0xff2D99ED):Color(0xff444444)))
@@ -42,6 +44,7 @@ class _PageMainState extends State<PageMain> {
         unselectedFontSize: 13,
         items: [
           _getBottomNavigationBarItem(
+            context,
             '首页',
             icon: 'assets/icon/home.png',
             activeIcon: 'assets/icon/homeActive.png',
@@ -49,6 +52,7 @@ class _PageMainState extends State<PageMain> {
             currentIndex: _tabIndex
           ),
           _getBottomNavigationBarItem(
+            context,
             '选课',
             icon: 'assets/icon/light.png',
             activeIcon: 'assets/icon/lightActive.png',
@@ -56,6 +60,7 @@ class _PageMainState extends State<PageMain> {
             currentIndex: _tabIndex
           ),
           _getBottomNavigationBarItem(
+            context,
             '听课',
             icon: 'assets/icon/book.png',
             activeIcon: 'assets/icon/bookActive.png',
@@ -63,6 +68,7 @@ class _PageMainState extends State<PageMain> {
             currentIndex: _tabIndex
           ),
           _getBottomNavigationBarItem(
+            context,
             '我的',
             icon: 'assets/icon/user.png',
             activeIcon: 'assets/icon/userActive.png',
