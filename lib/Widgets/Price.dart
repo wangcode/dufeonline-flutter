@@ -2,18 +2,20 @@ import 'package:flutter/material.dart';
 
 class Price extends StatelessWidget {
 
-  final double price;
+  final num price;
   final Color color;
   final double fontSize;
+  final bool deleteLine;
 
 
   const Price ({
     Key key,
     @required this.price,
     this.color,
-    this.fontSize
+    this.fontSize,
+    this.deleteLine = false
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
 
@@ -23,7 +25,8 @@ class Price extends StatelessWidget {
       '¥ $formatPrice',
       style: TextStyle(
         color: color,
-        fontSize: fontSize
+        fontSize: fontSize,
+        decoration: deleteLine ? TextDecoration.lineThrough : TextDecoration.none,
       ),
     );
   }

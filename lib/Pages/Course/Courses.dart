@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/Pages/Search.dart';
 
-class PageCourse extends StatelessWidget {
+class PageCourses extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

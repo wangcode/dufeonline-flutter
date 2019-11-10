@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:myapp/Pages/Home/PageHome.dart';
-import 'package:myapp/Pages/Course/Course.dart';
+import 'package:myapp/Pages/Course/Courses.dart';
 import 'package:myapp/Pages/Study/Study.dart';
 import 'package:myapp/Pages/Account/Account.dart';
 
@@ -15,7 +15,7 @@ class _PageMainState extends State<PageMain> {
   var _tabIndex = 0;
   var _pageList = [
     PageHome(),
-    PageCourse(),
+    PageCourses(),
     PageStudy(),
     PageAccount(),
   ];

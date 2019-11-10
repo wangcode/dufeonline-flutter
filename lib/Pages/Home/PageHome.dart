@@ -5,6 +5,7 @@ import 'package:myapp/Widgets/Carousel.dart';
 import './widget/HomeKaoFu.dart';
 
 class PageHome extends StatelessWidget {
+
   final List carouselList = [
     NetworkImage('http://cache8.edufe.cn/b2c/static/upload/photos_carousel/da4cd42cf5a64a29a5ff7bcea6855f09.jpg'),
     NetworkImage('http://cache8.edufe.cn/b2c/static/upload/photos_carousel/8bb5a68e445b4d869788d2845f1506d2.jpg'),
@@ -24,8 +25,8 @@ class PageHome extends StatelessWidget {
       appBar: HomeAppBar(),
       body: ListView(
         children: <Widget>[
-          Container(
-            height: 210,
+          AspectRatio(
+            aspectRatio: 1/0.48,
             child: Carousel(list: carouselList),
           ),
           HomeKaoFu(list: kaoFulist)
