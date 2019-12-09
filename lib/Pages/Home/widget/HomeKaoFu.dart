@@ -34,7 +34,7 @@ class HomeKaoFu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0, bottom: 15.0),
       margin: EdgeInsets.only(bottom: 10),
       color: Color(0xffffffff),
       child: _buildRow(list)

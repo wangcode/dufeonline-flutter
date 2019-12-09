@@ -2,7 +2,41 @@ import 'package:flutter/material.dart';
 import 'package:myapp/Widgets/IconText.dart';
 import 'package:myapp/Widgets/Price.dart';
 
-class VideoCourse extends StatelessWidget {
+import 'package:dio/dio.dart';
+
+class VideoCourse extends StatefulWidget {
+
+  VideoCourse (this.courseId, {Key key}) : super(key : key);
+
+  final int courseId;
+
+  @override
+  _VideoCourseState createState() => _VideoCourseState();
+}
+
+class _VideoCourseState extends State<VideoCourse> {
+  String courseName = '';
+  String picUrl = '';
+  num offPrice = 0.0;
+
+  Dio dio = Dio();
+
+  @override
+  void initState() {
+    super.initState();
+    getCourseInfo();
+
+  }
+
+  Future getCourseInfo () async{
+    var res = await dio.get("http://m.dufe.online/api/getCourseInfo", queryParameters: {"courseId": widget.courseId});
+    setState(() {
+      courseName = res.data['courseName'];
+      picUrl = res.data['picUrl'];
+      offPrice = num.parse(res.data['offPrice']);
+    });
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +64,7 @@ class VideoCourse extends StatelessWidget {
             aspectRatio: 4/2.25,
             child: Container(
               color: Color(0xff0088cc),
-              child: Center(child: Text('Media')),
+              child: Image.network(picUrl),
             ),
           ),
           Container(
@@ -42,12 +76,21 @@ class VideoCourse extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text('2019年初级会计实务 精讲班', style: TextStyle(fontSize: 17.0)),
+                Text(
+                  courseName,
+                  style: TextStyle(
+                    fontSize: 17.0,
+                  ),
+                  softWrap: true,
+                  textAlign: TextAlign.left,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     IconText(icon: Icons.access_time, text: '超过一天', size: 15.0, color: Color(0xFF8A8A8A)),
-                    Price(price: 300, color: Color(0xFFF99403), fontSize: 15.0)
+                    Price(price: offPrice, color: Color(0xFFF99403), fontSize: 15.0)
                   ],
                 )
               ],
@@ -74,7 +117,7 @@ class VideoCourse extends StatelessWidget {
                   height: 200.0,
                   child: TabBarView(
                     children: <Widget>[
-                      Text('1'),
+                      Text("${widget.courseId}"),
                       Text('1'),
                       Text('1'),
                     ],
@@ -83,15 +126,9 @@ class VideoCourse extends StatelessWidget {
               ]
             ),
           ),
-
-          // Text('1'),Text('1'),Text('1'),Text('1'),Text('1'),Text('1'),Text('1'),Text('1'),
-          // Text('1'),Text('1'),Text('1'),Text('1'),Text('1'),Text('1'),Text('1'),Text('1'),
-          // Text('1'),Text('1'),Text('1'),Text('1'),Text('1'),Text('1'),Text('1'),Text('1'),
-          // Text('1'),Text('1'),Text('1'),Text('1'),Text('1'),Text('1'),Text('1'),Text('1'),
-          // Text('1'),Text('1'),Text('1'),Text('1'),Text('1'),Text('1'),Text('1'),Text('1'),
-          // Text('1'),Text('1'),Text('1'),Text('1'),Text('1'),Text('1'),Text('1'),Text('1'),
         ],
       ),
     );
   }
 }
+
