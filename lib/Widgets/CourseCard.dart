@@ -18,7 +18,13 @@ class CourseCard extends StatelessWidget {
           Image.network(picUrl),
           Padding(
             padding: EdgeInsets.only(top: 5, bottom: 5),
-            child: Text(courseName, textAlign: TextAlign.left),
+            child: Text(
+              courseName,
+              textAlign: TextAlign.left,
+              softWrap: true,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
+            ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

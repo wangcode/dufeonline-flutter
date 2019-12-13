@@ -5,6 +5,7 @@ import 'package:myapp/Widgets/Price.dart';
 class CourseLine extends StatelessWidget {
 
   final double height = 80;
+  final double width = 140.0;
 
   final String picUrl;
   final String courseName;
@@ -35,7 +36,12 @@ class CourseLine extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Image.network(picUrl, height: height),
+          FadeInImage.assetNetwork(
+            image: picUrl,
+            height: height,
+            width: width,
+            placeholder: 'Account-Header-Background.png'
+          ),
           Expanded(
             flex: 6,
             child: Container(

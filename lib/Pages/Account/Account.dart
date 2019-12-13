@@ -8,16 +8,26 @@ class PageAccount extends StatelessWidget {
   Widget _listItemBuilder(String text, {IconData icon, GestureTapCallback onPress}) {
     return Container(
       height: 52.0,
-      child: Container(
-        child: GestureDetector(
-          onTap: onPress,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Row(children: <Widget>[Padding(padding: EdgeInsets.only(right: 14),child: Icon(icon, semanticLabel: text)), Text(text)]),
-              Icon(Icons.keyboard_arrow_right),
-            ],
-          ),
+      // child: Container(
+      //   child: GestureDetector(
+      //     onTap: onPress,
+      //     child: Row(
+      //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //       children: <Widget>[
+      //         Row(children: <Widget>[Padding(padding: EdgeInsets.only(right: 14),child: Icon(icon, semanticLabel: text)), Text(text)]),
+      //         Icon(Icons.keyboard_arrow_right),
+      //       ],
+      //     ),
+      //   ),
+      // ),
+      child: GestureDetector(
+        onTap: onPress,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Row(children: <Widget>[Padding(padding: EdgeInsets.only(right: 14),child: Icon(icon, semanticLabel: text)), Text(text)]),
+            Icon(Icons.keyboard_arrow_right),
+          ],
         ),
       ),
     );
@@ -27,7 +37,8 @@ class PageAccount extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       child: Container(
-        color: Color(0xfff0f1f3),
+        // color: Color(0xfff0f1f3),
+        color: Colors.white,
         child: ListView(
           children: <Widget>[
             SafeArea(
@@ -55,6 +66,16 @@ class PageAccount extends StatelessWidget {
                   ],
                 ),
               )
+            ),
+            ListTile(
+              leading: Icon(dufeIcon(0xe611), size: 20),
+              title: Text('我的专区'),
+              trailing: Icon(Icons.keyboard_arrow_right),
+            ),
+            ListTile(
+              leading: Icon(dufeIcon(0xe611), size: 20),
+              title: Text('我的专区'),
+              trailing: Icon(Icons.keyboard_arrow_right),
             ),
             Padding(
               padding: EdgeInsets.only(left: 10, right: 10),

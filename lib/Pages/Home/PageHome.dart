@@ -1,14 +1,10 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:myapp/Api/index.dart';
 import 'package:myapp/Pages/Home/widget/HomePlate.dart';
-import 'package:myapp/Widgets/CourseCard.dart';
 
 import './widget/HomeAppBar.dart';
 import 'package:myapp/Widgets/Carousel.dart';
 import './widget/HomeKaoFu.dart';
-import './widget/HomePanel.dart';
 
 class PageHome extends StatefulWidget {
   @override
@@ -16,8 +12,6 @@ class PageHome extends StatefulWidget {
 }
 
 class _PageHomeState extends State<PageHome> {
-
-  // List carouselList;
 
   List carouselList = [
     NetworkImage('http://cache8.edufe.cn/b2c/static/upload/photos_carousel/da4cd42cf5a64a29a5ff7bcea6855f09.jpg'),
@@ -51,21 +45,22 @@ class _PageHomeState extends State<PageHome> {
     });
 
     getAllPlate().then(
-      // (res) {setState(() {plateList = await res;});}
-      (res) {
-        log("$res");
-      }
+      (res) {setState(() {plateList = res;});}
     );
 
   }
 
   Future<List> getAllPlate() async {
-    return await getPlateList().then( (plateList) {
-      return plateList.map( (plate) async {
-        plate['children'] = await getPlateCourseList(plate['plateId']).then((res)=>res['courses']);
-        return plate;
-      }).toList();
-    });
+
+    List plateList = await getPlateList();
+
+    List<Future> res = plateList.map( (plate) async {
+      plate['children'] = await getPlateCourseList(plate['plateId']).then((res)=>res['courses']);
+      return plate;
+    }).toList();
+
+    return Future.wait(res);
+
   }
 
   @override
@@ -78,7 +73,7 @@ class _PageHomeState extends State<PageHome> {
             aspectRatio: 1/0.48,
             child: Carousel(list: carouselList),
           ),
-          HomeKaoFu(list: kaoFulist),
+          HomeKaoFu(list: this.kaoFulist),
           HomePlate(list: this.plateList)
         ],
       )

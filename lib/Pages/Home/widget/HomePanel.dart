@@ -19,6 +19,7 @@ class HomePanel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(left: 15.0, right: 15.0, top: 10.0, bottom: 10.0),
+      margin: EdgeInsets.only(bottom: 10.0),
       color: Colors.white,
       child: Column(
         children: <Widget>[

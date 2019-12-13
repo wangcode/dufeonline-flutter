@@ -34,10 +34,10 @@ class HomePlate extends StatelessWidget {
         Container(
           width: MediaQuery.of(context).size.width*0.5-20,
           child: CourseCard(
-            courseName: item['courseName'],
+            courseName: item['name'],
             picUrl: item['picUrl'],
-            timeLength: item['timeLength'],
-            price: item['price'],
+            timeLength: int.parse(item['timeLength']),
+            price: double.parse(item['price']),
           ),
         )
       );
