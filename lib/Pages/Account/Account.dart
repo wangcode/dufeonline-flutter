@@ -3,6 +3,8 @@ import 'package:myapp/Components/DufeIcon.dart';
 import 'package:myapp/Pages/Account/AccountCourse.dart';
 import 'package:myapp/Pages/Search.dart';
 
+import '../Exam/Kaofu.dart';
+
 class PageAccount extends StatelessWidget {
 
   Widget _listItemBuilder(String text, {IconData icon, GestureTapCallback onPress}) {
@@ -90,7 +92,7 @@ class PageAccount extends StatelessWidget {
                   _listItemBuilder(
                     '我的收藏',
                     icon: dufeIcon(0xe611),
-                    onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageSearch()));}
+                    onPress: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PageKaofu()));}
                   ),
                   _listItemBuilder(
                     '我的订单',

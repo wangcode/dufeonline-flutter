@@ -25,7 +25,8 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
               child: GestureDetector(
                 onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => PageSearch()));},
                 child: Container(
-                  margin: EdgeInsets.only(top: 10.0, bottom: 10.0),
+                  // margin: EdgeInsets.only(top: 5.0, bottom: 5.0),
+                  height: 32.0,
                   padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   alignment: Alignment(0, 0),
                   decoration: BoxDecoration(

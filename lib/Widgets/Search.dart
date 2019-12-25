@@ -17,8 +17,9 @@ class _PageSearchState extends State<PageSearch> {
             children: <Widget>[
               Expanded(
                 child: Container(
-                  margin: EdgeInsets.only(top: 10, bottom: 10, right: 15),
+                  margin: EdgeInsets.only(right: 15),
                   padding: EdgeInsets.only(left: 15, right: 15),
+                  height: 32.0,
                   alignment: Alignment(0, 0),
                   decoration: BoxDecoration(
                     color: Color(0xfff2f2f2),
